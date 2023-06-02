@@ -28,9 +28,9 @@ def get_unmatshed_spectra(mzml_directory, msms_file):
 # iterate over all mzml files in the given directory
 def process_mzml_directory(directory, unmatched_spectra):
     path = Path(directory)
-    mzml_files = path.glob("*.mzml")
+    mzml_files = path.glob("*.mzML")
     for mzml_file in mzml_files:
-        unmatched_file = mzml_file.with_name(f"{mzml_file.stem}_unmatched_spectra.mzml")
+        unmatched_file = mzml_file.with_name(f"{mzml_file.stem}_unmatched_spectra.mzML")
         remove_spectra(mzml_file, unmatched_file, unmatched_spectra)
         
 # take mzml file and return a new file with the unmatched spectra
